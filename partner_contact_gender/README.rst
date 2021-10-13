@@ -20,6 +20,8 @@ Contact gender
 |badge1| |badge2| |badge3| 
 
 Changed description
+Bla bla
+Bye
 
 **Table of contents**
 
@@ -29,8 +31,7 @@ Changed description
 Usage
 =====
 
-New item for 'Gender' can be edited on the 'Personal Information' tab of
-the partner contact form.
+Hello
 
 Bug Tracker
 ===========
@@ -55,6 +56,7 @@ Contributors
 ~~~~~~~~~~~~
 
 * Another contrib
+* Another contrib 22
 
 Maintainers
 ~~~~~~~~~~~
