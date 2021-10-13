@@ -19,8 +19,7 @@ Contact gender
 
 |badge1| |badge2| |badge3| 
 
-This module extends the contact management functionality. It allows recording
-of a partner's gender.
+Changed description
 
 **Table of contents**
 
@@ -55,10 +54,7 @@ Authors
 Contributors
 ~~~~~~~~~~~~
 
-* Holger Brunn <hbrunn@therp.nl>
-* Jairo Llopis <j.llopis@grupoesoc.es>
-* Richard deMeester <richard@willowit.com.au>
-* Tharathip Chaweewongphan <tharathipc@ecosoft.co.th>
+* Another contrib
 
 Maintainers
 ~~~~~~~~~~~
