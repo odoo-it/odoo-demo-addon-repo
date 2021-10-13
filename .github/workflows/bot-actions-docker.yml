@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@v2
       -
         name: ocmt
-        uses: odoo-it/github-action-ocamt@master
+        uses: odoo-it/github-action-ocmt@master
         with:
           addons-dir: "."
           repo-name: github.event.repository.name
