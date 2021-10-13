@@ -10,7 +10,7 @@ jobs:
   post-push-actions:
     runs-on: ubuntu-latest
     concurrency: 
-      group: ${{ github.head_ref }}
+      group: ${{ github.event.ref }}
       cancel-in-progress: true
     steps:
       -
