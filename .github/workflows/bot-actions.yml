@@ -22,17 +22,20 @@ jobs:
       - 
         name: Setup Git
         run: |
-          git config --global user.name 'Bot'
-          git config --global user.email 'bot@users.noreply.github.com'
+          git config --global user.name 'odoo-it-github-bot'
+          git config --global user.email 'odoo-it-github-bot@users.noreply.github.com'
       -
         name: Install OCA Maintainer Tools
         run: pip install oca-maintainers-tools@git+https://github.com/OCA/maintainer-tools.git
       -
-        name: Generate Readme
-        run: |
-          oca-gen-addons-table --commit
-          oca-gen-addon-readme --addons-dir=. --org-name=${{ github.event.repository.owner.name }} --repo-name=${{ github.event.repository.name }} --branch=14.0 --commit
-          oca-gen-addon-icon --addons-dir=. --commit
+        name: Generate Addon Readme
+        run: oca-gen-addon-readme --addons-dir=. --org-name=${{ github.event.repository.owner.name }} --repo-name=${{ github.event.repository.name }} --branch=14.0 --commit
+      -
+        name: Generate Addon Icon
+        run: oca-gen-addon-icon --addons-dir=. --commit   
+      -
+        name: Generate Addons Table
+        run: oca-gen-addons-table --commit
       -
         name: Push
         run: git push
