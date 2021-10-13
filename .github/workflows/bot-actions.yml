@@ -1,0 +1,33 @@
+name: bot-actions
+
+on:
+  push:
+    branches:
+      - "14.0"
+
+
+jobs:
+  post-push-actions:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Checkout
+        uses: actions/checkout@v2
+      -
+        name: Setup Python
+        uses: actions/setup-python@v2
+      -
+        name: Install OCA Maintainer Tools
+        run: pip install oca-maintainers-tools@git+https://github.com/OCA/maintainer-tools.git
+      -
+        name: Generate Readme
+        run: |
+          oca-gen-addons-table --commit
+          oca-gen-addon-readme --addons-dir=. --org-name=${{ github.event.repository.owner.name }} --repo-name=${{ github.event.repository.name }} --branch=14.0 --commit
+          oca-gen-addon-icon --addons-dir=. --commit
+      -
+        name: Push
+        run: |
+          git config --global user.name 'Bot'
+          git config --global user.email 'bot@users.noreply.github.com'
+          git push
