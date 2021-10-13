@@ -16,6 +16,11 @@ jobs:
       -
         name: Setup Python
         uses: actions/setup-python@v2
+      - 
+        name: Setup Git
+        run: |
+          git config --global user.name 'Bot'
+          git config --global user.email 'bot@users.noreply.github.com'
       -
         name: Install OCA Maintainer Tools
         run: pip install oca-maintainers-tools@git+https://github.com/OCA/maintainer-tools.git
@@ -27,7 +32,4 @@ jobs:
           oca-gen-addon-icon --addons-dir=. --commit
       -
         name: Push
-        run: |
-          git config --global user.name 'Bot'
-          git config --global user.email 'bot@users.noreply.github.com'
-          git push
+        run: git push
