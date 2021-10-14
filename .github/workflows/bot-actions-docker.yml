@@ -20,10 +20,13 @@ jobs:
         name: ocmt
         uses: odoo-it/github-action-ocmt@master
         with:
-          addons-dir: "."
-          repo-name: github.event.repository.name
-          org-name: github.event.repository.owner.name
-          branch-name: "14.0"
+          repository: github.event.repository.name
+          organization: github.event.repository.owner.name
+          branch: "14.0"
+          gen-addons-table: "true"
+          gen-addons-readme: true
+          gen-addons-icon: true
+          commit: "true"
       -
         name: Push
         run: git push
