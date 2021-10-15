@@ -20,8 +20,8 @@ jobs:
         name: ocmt
         uses: odoo-it/github-action-ocmt@master
         with:
-          repository: github.event.repository.name
-          organization: github.event.repository.owner.name
+          repository: ${{ github.event.repository.name }}
+          organization: ${{ github.event.repository.owner.name }}
           branch: "14.0"
           gen-addons-table: "true"
           gen-addons-readme: true
